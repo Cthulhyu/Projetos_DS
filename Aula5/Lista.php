@@ -1,5 +1,14 @@
 <?php
 include_once("conexao.php");
+$id = isset($_REQUEST["id"]) ? $_REQUEST['id'] : null;
+if($id){
+    $sql = "SELECT * FROM aluno WHERE id = :id";
+    $stmt = $conexao->prepare($sql);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    $resultItem = $stmt->fetch(PDO::FETCH_OBJ);
+    #var_dump($resultItem);
+}
 $sql = "Select * FROM aluno";
 $result = $conexao->query($sql);
 ?>
@@ -16,16 +25,19 @@ $result = $conexao->query($sql);
 </head>
 <body>
 
-    <form action="inserir.php" method="POST">
-        Nome: <input type="text" name="nome">
-        RA: <input type="number" name="ra">
-        <br><br>
-        Email: <input type="text" name="email">
-
-
-
-
-    </form>
+<form action="inserir.php" method="POST">
+    Nome: <input type="text" name="nome"
+                 value="<?php echo isset($resultItem) ? $resultItem->NOME : ''?>">
+    RA: <input type="number" name="ra"
+               value="<?php echo isset($resultItem) ? $resultItem->ra : ''?>">
+    <br><br>
+    Email: <input type="text" name="email"
+                  value="<?php echo isset($resultItem) ? $resultItem->email : ''?>">
+    <br><br>
+    <input type="submit" value="Salvar">
+    <input type="reset" value="Limpar">
+    <br><br>
+</form>
 
 <table border="1" width="100%">
     <tr>
@@ -42,6 +54,7 @@ $result = $conexao->query($sql);
             <th><?php echo $row->ra ?></th>
             <th><?php echo $row->email ?></th>
             <td>
+                <a href="Lista.php?id=<?php echo $row->id ?>">Editar</a>
                 <a href="excluir.php?id=<?php echo $row->id ?>">Excluir</a>
             </td>
         </tr>

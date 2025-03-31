@@ -9,7 +9,11 @@ $email = $_REQUEST['email'];
 $sql = "INSERT INTO aluno (nome, ra, email) 
         VALUE (:nome, :ra, :email)";
     $stmt = $conexao->prepare($sql);
-    $
-    $stmt =execute();
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':ra', $ra);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    header("Location: Lista.php");
 
 ?>
