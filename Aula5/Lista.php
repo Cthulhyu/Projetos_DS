@@ -1,7 +1,7 @@
 <?php
 include_once("conexao.php");
 $id = isset($_REQUEST["id"]) ? $_REQUEST['id'] : null;
-if($id){
+if ($id) {
     $sql = "SELECT * FROM aluno WHERE id = :id";
     $stmt = $conexao->prepare($sql);
     $stmt->bindParam(':id', $id);
@@ -21,23 +21,26 @@ $result = $conexao->query($sql);
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="Estilo.css" media="screen"/>
     <title>Lista</title>
 </head>
 <body>
+<div id="box">
+    <form action="inserir.php" method="POST" id="cor">
+        Nome: <input type="text" name="nome"
+                     value="<?php echo isset($resultItem) ? $resultItem->NOME : '' ?>">
+        RA: <input type="number" name="ra"
+                   value="<?php echo isset($resultItem) ? $resultItem->ra : '' ?>">
+        <br><br>
+        Email: <input type="text" name="email"
+                      value="<?php echo isset($resultItem) ? $resultItem->email : '' ?>">
+        <br><br>
+        <input type="submit" value="Salvar">
+        <input type="reset" value="Limpar">
+        <br><br
+    </form>
+</div>
 
-<form action="inserir.php" method="POST">
-    Nome: <input type="text" name="nome"
-                 value="<?php echo isset($resultItem) ? $resultItem->NOME : ''?>">
-    RA: <input type="number" name="ra"
-               value="<?php echo isset($resultItem) ? $resultItem->ra : ''?>">
-    <br><br>
-    Email: <input type="text" name="email"
-                  value="<?php echo isset($resultItem) ? $resultItem->email : ''?>">
-    <br><br>
-    <input type="submit" value="Salvar">
-    <input type="reset" value="Limpar">
-    <br><br>
-</form>
 
 <table border="1" width="100%">
     <tr>

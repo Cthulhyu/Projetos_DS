@@ -1,0 +1,39 @@
+body {
+    background: black;
+}
+
+th {
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+form {
+    color: white;
+}
+input[type=text] {
+    border: 2px black solid;
+    border-radius: 4px;
+}
+input[type=number] {
+    border: 2px black solid;
+    border-radius: 4px;
+}
+input[type=submit] {
+    background: green;
+    color: white;
+    border: 1px solid darkcyan;
+    border-radius: 10px;
+    box-shadow: 5px ;
+    text-shadow: none;
+}
+input[type=reset] {
+    background: darkred;
+    color: white;
+    border: 1px solid darkcyan;
+    border-radius: 10px;
+    box-shadow: 5px ;
+    text-shadow: none;
+}
