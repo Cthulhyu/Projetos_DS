@@ -1,16 +1,32 @@
 body {
     background: black;
 }
+@font-face {
+    font-family: Lemon;
+    src: url(LEMONMILK-Regular.otf);
+}
+@font-face {
+    font-family: Roboto;
+    src: url("Roboto-Light.ttf");
+}
+h1{
+    font-family: Lemon;
+    color: white;
+    text-align: center;
+}
 
 th {
+    font-family: Roboto;
     color: white;
 }
 
 a {
+    font-family: Roboto;
     color: white;
 }
 
 form {
+    font-family: Lemon;
     color: white;
 }
 input[type=text] {
@@ -26,14 +42,10 @@ input[type=submit] {
     color: white;
     border: 1px solid darkcyan;
     border-radius: 10px;
-    box-shadow: 5px ;
-    text-shadow: none;
 }
 input[type=reset] {
     background: darkred;
     color: white;
     border: 1px solid darkcyan;
     border-radius: 10px;
-    box-shadow: 5px ;
-    text-shadow: none;
 }

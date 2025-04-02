@@ -25,6 +25,9 @@ $result = $conexao->query($sql);
     <title>Lista</title>
 </head>
 <body>
+
+<h1>Formulario Academico</h1>
+
 <div id="box">
     <form action="inserir.php" method="POST" id="cor">
         Nome: <input type="text" name="nome"
