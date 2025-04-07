@@ -21,13 +21,11 @@ $result = $conexao->query($sql);
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="Estilo.css" media="screen"/>
     <title>Lista</title>
 </head>
 <body>
 
 <h1>Formulario Academico</h1>
-
 <div id="box">
     <form action="inserir.php" method="POST" id="cor">
         Nome: <input type="text" name="nome"
@@ -40,11 +38,9 @@ $result = $conexao->query($sql);
         <br><br>
         <input type="submit" value="Salvar">
         <input type="reset" value="Limpar">
-        <br><br
+        <br><br>
     </form>
 </div>
-
-
 <table border="1" width="100%">
     <tr>
         <th>ID</th>
