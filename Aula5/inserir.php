@@ -12,12 +12,12 @@ if ($id) {
     WHERE id = :id";
     $stmt = $conexao->prepare($sql);
     $stmt->bindParam(':id', $id);
-    $mensagem = "Registro atualizado com sucesso."
+    $mensagem = "Registro atualizado com sucesso.";
 } else {
     $sql = "INSERT INTO aluno (NOME, ra, email) 
         VALUE (:nome, :ra, :email)";
     $stmt = $conexao->prepare($sql);
-    $mensagem = "Registro salvo com sucesso."
+    $mensagem = "Registro salvo com sucesso.";
 
 }
 $stmt->bindParam(':email', $email);

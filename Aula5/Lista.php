@@ -23,11 +23,13 @@ $result = $conexao->query($sql);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lista</title>
 </head>
-<body>
+<body id="cor">
 
 <h1>Formulario Academico</h1>
 <div id="box">
     <form action="inserir.php" method="POST" id="cor">
+        <input type="hidden" name="id"
+               value="<?php echo isset($resultItem) ? $resultItem->id : '' ?>">
         Nome: <input type="text" name="nome"
                      value="<?php echo isset($resultItem) ? $resultItem->NOME : '' ?>">
         RA: <input type="number" name="ra"
