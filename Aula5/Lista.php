@@ -1,5 +1,10 @@
 <?php
 include_once("conexao.php");
+    session_start();
+    if(!isset($_SESSION["email"])){
+        header("location: index.php");
+        exit;
+    }
 $id = isset($_REQUEST["id"]) ? $_REQUEST['id'] : null;
 if ($id) {
     $sql = "SELECT * FROM aluno WHERE id = :id";
@@ -41,6 +46,7 @@ $result = $conexao->query($sql);
         <br><br>
         <input type="submit" value="Salvar">
         <input type="reset" value="Limpar">
+        <a href="sair.php">Sair</a>
         <br><br>
     </form>
 </div>
