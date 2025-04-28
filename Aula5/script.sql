@@ -27,5 +27,7 @@ where id =3;
 insert into aluno (nome, ra, email) values
     ('maria', 5555, 'maria@gmail.com');
 update aluno set ra = 88888 where id = 2;
-
+--Crie a tabela senha
+--cria senha para os usuarios manualmente--
+    update aluno set senha = md5(123456) where 1
 --drop table aluno;

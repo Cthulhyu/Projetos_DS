@@ -11,7 +11,7 @@ $stmt->bindParam(':senha', md5($senha));
 $stmt->execute();
 if ($stmt->rowCount() > 0) {
     session_start();
-    $_SESSION['email'] = $email;''
+    $_SESSION['email'] = $email;
     header("Location: Lista.php");
 } else {
     header("Location: index.php?m=Usuário burro e\ou senha invalida!");
