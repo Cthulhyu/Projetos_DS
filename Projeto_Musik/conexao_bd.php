@@ -1,0 +1,12 @@
+<?php
+    $host = "127.0.0.1";
+    $user = "root";
+    $port = "3306";
+    $password ="ceub123456";
+    $db = "SiteMusica";
+
+    $conexao = new PD0(
+        'mysql:host='. $host . ';
+        port=' . $port . ';
+        dbname=' . $db , $user, $password);
+?>
